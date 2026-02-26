@@ -5,10 +5,11 @@
 ** Class: 	CSC 242
 ** Assignment: 	Final Project part 1
 ** File: 	source.cpp
-** Description: Spell checker
+** Description: Spell Checker for the English language. It uses a dictionary
+** of words to check if a given word is speeled correctly or not. 
 **
-** Authors: 	Jhoana Mayle, Ever Hernandez, Eric Mounivong** Date: 	
-** Create Date - February 25, 2026
+** Authors: 	Jhoana Mayle, Ever Hernandez, Eric Mounivong
+** Date: February 25, 2026
 ** -------------------------------------------------------------------------*/
 
 #include <iostream>
