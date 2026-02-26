@@ -45,12 +45,10 @@ int main()
 
 	// STEP 4: Open the File to be checked
 	// Authored by: Ever Hernandez
-	ifstream check_file("input.txt");
-	cout << "Could not open file to be checked: ";
-
-	if (input_file.fail()) 	{
-		cout << "Could not open file: " << input.txt << endl;
-		return 1;
+	ifstream check_file("words.txt");
+	if (check_file.fail()) {
+		cout << "Could not open file to be checked: input.txt" << endl;
+		return 1; 
 	}
 	
 	// STEP 5: Close the dictionary file
