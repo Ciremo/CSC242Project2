@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="inputs.txt" />
+    <Text Include="input.txt" />
     <Text Include="words.txt" />
   </ItemGroup>
   <ItemGroup>
