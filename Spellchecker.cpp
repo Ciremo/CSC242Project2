@@ -1,3 +1,16 @@
+/* ---------------------------------------------------------------------------
+** I attest that this following code represents my own work and is subject to
+** the plagiarism policy found in the course syllabus.
+** 
+** Class: 	CSC 242
+** Assignment: 	Final Project part 1
+** File: 	source.cpp
+** Description: Spell checker
+**
+** Author: 	
+** Date: 	Create Date
+** -------------------------------------------------------------------------*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
