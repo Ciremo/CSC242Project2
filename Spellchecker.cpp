@@ -49,7 +49,7 @@ int main()
 	
 	// STEP 5: Open the File to be checked
 	// Authored by: Ever Hernandez
-	ifstream check_file("words.txt");
+	ifstream check_file("input.txt");
 	if (check_file.fail()) {
 		cout << "Could not open file to be checked: words.txt" << endl;
 		return 1;
