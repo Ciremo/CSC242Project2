@@ -17,6 +17,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 
 int main() 
@@ -29,9 +30,11 @@ int main()
 		cout << "Could not open dictionary file." << endl;
 		return 1;
 	}
+	
 	// STEP 2: Define a vector of strings called words
 	// Authored by: Jhoana Mayle
 	vector<string> words;
+	
 	// STEP 3: Read each word from the dictionary file and store it in the vector
 	// Authored by: Eric Mounivong
 	string word;
@@ -42,11 +45,13 @@ int main()
 	// STEP 4: Close the dictionary file
 	// Authored by: Eric Mounivong
 	dict_file.close();
+	
 	// STEP 5: Prompt the user to enter a word
 	// Authored by: Eric Mounivong
 	string input_word;
 	cout << "Enter a word to check: ";
 	cin >> input_word;
+	
 	// STEP 6: Check if the input word is in the vector of words
 	// Authored by: Eric Mounivong
 	if (find(words.begin(), words.end(), input_word) != words.end()) 
