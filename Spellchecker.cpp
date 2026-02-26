@@ -45,9 +45,14 @@ int main()
 
 	// STEP 4: Open the File to be checked
 	// Authored by: Ever Hernandez
-	string "words.txt";
-	cout << "Enter the name of the file to check: ";
-	cin >> "words.txt"; 
+	string input.txt;
+	cout << "Could not open file to be checked: ";
+	cin >> input.txt; 
+
+	if (input_file.fail()) 	{
+		cout << "Could not open file: " << input.txt << endl;
+		return 1;
+	}
 	
 	// STEP 5: Close the dictionary file
 	// Authored by: Eric Mounivong
