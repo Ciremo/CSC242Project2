@@ -45,9 +45,9 @@ int main()
 
 	// STEP 4: Open the File to be checked
 	// Authored by: Ever Hernandez
-	string filename;
+	string words.txt;
 	cout << "Enter the name of the file to check: ";
-	cin >> filename; 
+	cin >> words.txt; 
 	
 	// STEP 5: Close the dictionary file
 	// Authored by: Eric Mounivong
