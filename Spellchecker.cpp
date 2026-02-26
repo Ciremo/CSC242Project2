@@ -27,7 +27,7 @@ int main()
 	ifstream dict_file("words.txt");
 	if (dict_file.fail()) 
 	{
-		cout << "Could not open dictionary file." << endl;
+		cout << "Could not open dictionary file: words.txt" << endl;
 		return 1;
 	}
 	
@@ -43,34 +43,54 @@ int main()
 		words.push_back(word);
 	}
 
-	// STEP 4: Open the File to be checked
-	// Authored by: Ever Hernandez
-	ifstream check_file("words.txt");
-	if (check_file.fail()) {
-		cout << "Could not open file to be checked: input.txt" << endl;
-		return 1; 
-	}
-	
-	// STEP 5: Close the dictionary file
+	// STEP 4: Close the dictionary file
 	// Authored by: Eric Mounivong
 	dict_file.close();
 	
-	// STEP 6: Prompt the user to enter a word
+	// STEP 5: Open the File to be checked
+	// Authored by: Ever Hernandez
+	ifstream check_file("words.txt");
+	if (check_file.fail()) {
+		cout << "Could not open file to be checked: words.txt" << endl;
+		return 1;
+	}
+
+	// STEP 6: Check each input word against the dictionary
 	// Authored by: Eric Mounivong
 	string input_word;
-	cout << "Enter a word to check: ";
-	cin >> input_word;
-	
-	// STEP 7: Check if the input word is in the vector of words
-	// Authored by: Eric Mounivong
-	if (find(words.begin(), words.end(), input_word) != words.end()) 
+	while (check_file >> input_word)
+	{
+		if (find(words.begin(), words.end(), input_word) != words.end()) 
 		{
-		cout << "The word is spelled correctly." << endl;
+			cout << input_word << " : Word found." << endl;
 		} 
 		else
+		{
+			cout << input_word << " : Word not found." << endl;
+		}
+		string current_word;
+		cout << "Enter a word to check (or type 'exit' to quit): ";
+		while (cin >> current_word) 
+		{
+			if (current_word == "exit") 
 			{
-		cout << "The word is misspelled." << endl;
+				break;
 			}
+			if (find(words.begin(), words.end(), current_word) != words.end()) 
+			{
+				cout << current_word << " : Word found." << endl;
+			} 
+			else 
+			{
+				cout << current_word << " : Word not found." << endl;
+			}
+			cout << "Enter a word to check (or type 'exit' to quit): ";
+			check_file.close();
+		}
+		
+		
+	}
+
+	check_file.close();
 	return 0;
 } // End of the program
-
