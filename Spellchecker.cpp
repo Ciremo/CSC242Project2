@@ -7,8 +7,8 @@
 ** File: 	source.cpp
 ** Description: Spell checker
 **
-** Author: 	
-** Date: 	Create Date
+** Authors: 	Jhoana Mayle, Ever Hernandez, Eric Mounivong** Date: 	
+** Create Date - February 25, 2026
 ** -------------------------------------------------------------------------*/
 
 #include <iostream>
