@@ -42,17 +42,24 @@ int main()
 	{
 		words.push_back(word);
 	}
-	// STEP 4: Close the dictionary file
+
+	// STEP 4: Open the File to be checked
+	// Authored by: Ever Hernandez
+	string filename;
+	cout << "Enter the name of the file to check: ";
+	cin >> file name; 
+	
+	// STEP 5: Close the dictionary file
 	// Authored by: Eric Mounivong
 	dict_file.close();
 	
-	// STEP 5: Prompt the user to enter a word
+	// STEP 6: Prompt the user to enter a word
 	// Authored by: Eric Mounivong
 	string input_word;
 	cout << "Enter a word to check: ";
 	cin >> input_word;
 	
-	// STEP 6: Check if the input word is in the vector of words
+	// STEP 7: Check if the input word is in the vector of words
 	// Authored by: Eric Mounivong
 	if (find(words.begin(), words.end(), input_word) != words.end()) 
 		{
