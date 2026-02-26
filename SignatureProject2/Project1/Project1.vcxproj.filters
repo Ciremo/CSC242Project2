@@ -15,14 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="words.txt" />
-    <Text Include="input.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Spellchecker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Project2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
