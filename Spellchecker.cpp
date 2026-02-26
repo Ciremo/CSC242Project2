@@ -47,7 +47,7 @@ int main()
 	// Authored by: Ever Hernandez
 	string filename;
 	cout << "Enter the name of the file to check: ";
-	cin >> file name; 
+	cin >> filename; 
 	
 	// STEP 5: Close the dictionary file
 	// Authored by: Eric Mounivong
