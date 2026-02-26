@@ -2,14 +2,14 @@
 ** I attest that this following code represents my own work and is subject to
 ** the plagiarism policy found in the course syllabus.
 ** 
-** Class: 	CSC 242
+** Class: 		CSC 242
 ** Assignment: 	Final Project part 1
-** File: 	source.cpp
+** File: 		source.cpp
 ** Description: Spell Checker for the English language. It uses a dictionary
 ** of words to check if a given word is speeled correctly or not. 
 **
 ** Authors: 	Jhoana Mayle, Ever Hernandez, Eric Mounivong
-** Date: February 25, 2026
+** Date: 		February 25, 2026
 ** -------------------------------------------------------------------------*/
 
 #include <iostream>
