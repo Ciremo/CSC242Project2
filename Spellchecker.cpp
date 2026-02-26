@@ -45,7 +45,7 @@ int main()
 
 	// STEP 4: Open the File to be checked
 	// Authored by: Ever Hernandez
-	ifstream check_file(input.txt);
+	ifstream check_file("input.txt");
 	cout << "Could not open file to be checked: ";
 
 	if (input_file.fail()) 	{
