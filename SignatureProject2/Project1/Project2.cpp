@@ -18,24 +18,17 @@
 
 using namespace std;
 
-/**
- * Author: [Team Member 1 Name]
- * Creates the cipher alphabet by removing duplicate letters from the keyword
- * and appending the remaining alphabet letters in reverse order.
- */
+// Authhored by: Ever Hernandez
+// Alphabet Generator
 string create_cipher_alphabet(string key) {
     string cipher = "";
-    string upperKey = "";
-
-    // Convert key to uppercase and remove duplicates
     for (char c : key) {
-        char up = toupper(c);
-        if (isalpha(up) && cipher.find(up) == string::npos) {
+        char up = toupper(static_cast<unsigned char>(c));
+        if (isalpha(static_cast<unsigned char>(up)) && cipher.find(up) == string::npos) {
             cipher += up;
         }
     }
-
-    // Append remaining letters of the alphabet in reverse order (Z to A)
+    // Append remaining letters in reverse order as per Assignment 5 diagram
     for (char c = 'Z'; c >= 'A'; c--) {
         if (cipher.find(c) == string::npos) {
             cipher += c;
@@ -44,11 +37,8 @@ string create_cipher_alphabet(string key) {
     return cipher;
 }
 
-/**
- * Author: [Team Member 2 Name]
- * Processes the input file and writes the encrypted/decrypted result to the output file.
- * Uses pass-by-reference for strings to avoid unnecessary copying.
- */
+// Authored by: Johana Mayle 
+// File Processing
 void transform_file(const string& in_name, const string& out_name, const string& cipher, bool decrypt) {
     ifstream in_file(in_name);
     ofstream out_file(out_name);
@@ -58,46 +48,40 @@ void transform_file(const string& in_name, const string& out_name, const string&
         return;
     }
 
+    const string plain = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     char ch;
-    string plain = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     while (in_file.get(ch)) {
-        if (isalpha(ch)) {
-            bool isLower = islower(ch);
-            char upper = toupper(ch);
+        if (isalpha(static_cast<unsigned char>(ch))) {
+            bool isLower = islower(static_cast<unsigned char>(ch));
+            char upper = toupper(static_cast<unsigned char>(ch));
             char transformed;
 
             if (decrypt) {
+                // Find position in the scrambled alphabet (cipher) to get standard letter
                 size_t pos = cipher.find(upper);
                 transformed = plain[pos];
             }
             else {
+                // Find position in standard alphabet (plain) to get scrambled letter
                 size_t pos = plain.find(upper);
                 transformed = cipher[pos];
             }
-
-            // Preserve original casing
-            out_file << (char)(isLower ? tolower(transformed) : transformed);
+            out_file << (char)(isLower ? tolower(static_cast<unsigned char>(transformed)) : transformed);
         }
         else {
-            out_file << ch; // Keep spaces, numbers, and punctuation
+            out_file << ch;
         }
     }
-
-    in_file.close();
-    out_file.close();
 }
 
-/**
- * Author: [Team Member 3 Name]
- * Main execution block to handle user input and coordinate the transformation.
- */
+// Authored by: Eric Mounnivong
+// Main Logic
 int main() {
     string mode, key, inputFileName, outputFileName;
 
     cout << "Enter mode (-e to encrypt, -d to decrypt): ";
     cin >> mode;
-
     cout << "Enter keyword: ";
     cin >> key;
 
@@ -106,16 +90,23 @@ int main() {
         return 1;
     }
 
-    // Based on assignment example: crypt -d -kFEATHER encrypt.txt output.txt
-    inputFileName = "encrypt.txt";
-    outputFileName = "output.txt";
+    // Logic to ensure decryption always goes to decrypted.txt
+    // and encryption always goes to encrypted.txt per your requirement.
+    if (mode == "-d") {
+        inputFileName = "encrypted.txt"; // Assuming you are decrypting what you just encrypted
+        outputFileName = "decrypted.txt";
+    }
+    else {
+        inputFileName = "input.txt";
+        outputFileName = "encrypted.txt";
+    }
 
     string cipherAlphabet = create_cipher_alphabet(key);
     bool isDecrypt = (mode == "-d");
 
     transform_file(inputFileName, outputFileName, cipherAlphabet, isDecrypt);
 
-    cout << "Success! Check " << outputFileName << " for results." << endl;
+    cout << "Success! Results saved in " << outputFileName << endl;
 
     return 0;
 }
