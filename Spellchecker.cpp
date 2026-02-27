@@ -9,7 +9,7 @@
 ** of words to check if a given word is in the dictionary or not.
 **
 ** Authors: 	Jhoana Mayle, Ever Hernandez, Eric Mounivong
-** Date: 		February 25, 2026
+** Date: 		February 28, 2026
 ** -------------------------------------------------------------------------*/
 
 #include <iostream>
