@@ -15,16 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Project2.cpp">
+    <ClCompile Include="Cipher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="output.txt" />
-    <Text Include="encrypt.txt">
+    <Text Include="encrypted.txt">
       <Filter>Source Files</Filter>
     </Text>
     <Text Include="input.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="decrypted.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
