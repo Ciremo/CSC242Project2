@@ -4,7 +4,7 @@
 ** 
 ** Class: 		CSC 242
 ** Assignment: 	Final Project part 1
-** File: 		source.cpp
+** File: 		Spellchecker.cpp
 ** Description: Spell Checker for the English language. It uses a dictionary
 ** of words to check if a given word is in the dictionary or not.
 **
